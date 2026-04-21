@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { Star, Quote, Play, ChevronLeft, ChevronRight } from "lucide-react";
 import { Section } from "@/components/Section";
 import { RevealOnScroll } from "@/components/RevealOnScroll";
@@ -65,7 +65,13 @@ const videos: Video[] = [
 
 export function SocialProof() {
   const [activeVideo, setActiveVideo] = useState(videos[0]);
+  const [playing, setPlaying] = useState(false);
   const [testimonialIndex, setTestimonialIndex] = useState(0);
+
+  const handleVideoSelect = useCallback((video: Video) => {
+    setActiveVideo(video);
+    setPlaying(false);
+  }, []);
 
   const nextTestimonial = () =>
     setTestimonialIndex((i) => (i + 1) % testimonials.length);
@@ -176,14 +182,34 @@ export function SocialProof() {
             <div className="mt-8 grid gap-6 md:grid-cols-[1fr_280px]">
               <div className="relative overflow-hidden rounded-2xl border border-white/[0.06] bg-black/40">
                 <div className="aspect-video w-full">
-                  <iframe
-                    key={activeVideo.youtubeId}
-                    src={`https://www.youtube.com/embed/${activeVideo.youtubeId}?rel=0`}
-                    title={activeVideo.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="h-full w-full"
-                  />
+                  {playing ? (
+                    <iframe
+                      key={activeVideo.youtubeId}
+                      src={`https://www.youtube.com/embed/${activeVideo.youtubeId}?rel=0&autoplay=1`}
+                      title={activeVideo.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="h-full w-full"
+                    />
+                  ) : (
+                    <button
+                      onClick={() => setPlaying(true)}
+                      className="relative h-full w-full group"
+                      aria-label={`Assistir ${activeVideo.title}`}
+                    >
+                      <img
+                        src={activeVideo.thumbnail}
+                        alt={activeVideo.title}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 flex items-center justify-center bg-black/40 transition-colors group-hover:bg-black/50">
+                        <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white/10 backdrop-blur-sm border border-white/20 transition-transform group-hover:scale-110">
+                          <Play className="h-7 w-7 text-white ml-1" fill="currentColor" />
+                        </div>
+                      </div>
+                    </button>
+                  )}
                 </div>
                 <div className="p-4">
                   <h4 className="font-display text-lg font-bold text-white">{activeVideo.title}</h4>
@@ -194,7 +220,7 @@ export function SocialProof() {
                 {videos.map((video) => (
                   <button
                     key={video.id}
-                    onClick={() => setActiveVideo(video)}
+                    onClick={() => handleVideoSelect(video)}
                     className={`group flex shrink-0 items-center gap-3 rounded-xl border p-2 text-left transition-all duration-300 md:w-full ${
                       activeVideo.id === video.id
                         ? "border-electric/40 bg-electric/10 shadow-[0_0_20px_-5px_hsl(var(--electric)/0.3)]"
