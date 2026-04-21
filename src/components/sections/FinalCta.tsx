@@ -1,30 +1,46 @@
+import { Sparkles } from "lucide-react";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { RevealOnScroll } from "@/components/RevealOnScroll";
 
 export function FinalCta() {
   return (
-    <section className="relative overflow-hidden bg-dark-section px-5 py-24 text-dark-foreground md:px-8 md:py-32">
-      <div className="pointer-events-none absolute left-1/2 top-0 h-96 w-[600px] -translate-x-1/2 rounded-full bg-[oklch(0.65_0.16_245/0.12)] blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-[oklch(0.72_0.18_145/0.12)] blur-3xl" />
+    <section className="relative overflow-hidden bg-dark-section px-5 py-16 text-dark-foreground md:px-8 md:py-24">
+      <div className="absolute inset-0 bg-grid-dark opacity-30 [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,black,transparent)]" />
+      <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-electric/15 blur-[120px]" />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-whatsapp/15 blur-[100px]" />
 
       <div className="relative mx-auto max-w-3xl text-center">
-        <h2 className="text-balance text-3xl font-bold leading-tight md:text-5xl lg:text-6xl">
-          Seu proximo lancamento merece uma{" "}
-          <span className="bg-gradient-to-r from-electric to-whatsapp bg-clip-text text-transparent">
-            estrutura profissional
-          </span>
-        </h2>
-        <p className="mx-auto mt-6 max-w-xl text-balance text-lg text-dark-muted md:text-xl">
-          Vamos conversar 15 minutos sobre como escalar seu infoproduto.
-        </p>
+        <RevealOnScroll variant="fade-down">
+          <div className="mx-auto mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-xs font-medium text-dark-foreground/80 backdrop-blur">
+            <Sparkles className="h-3 w-3 text-gold" />
+            Cresça seu número de Leads
+          </div>
+        </RevealOnScroll>
 
-        <div className="mt-10">
-          <WhatsAppButton size="xl" glow>
-            Quero conversar agora
-          </WhatsAppButton>
-          <p className="mt-4 text-sm text-dark-muted">
-            Sem compromisso. Se nao fizer sentido, te falo com honestidade.
+        <RevealOnScroll variant="blur" delay={100}>
+          <h2 className="text-balance font-display text-2xl font-bold leading-tight md:text-4xl lg:text-5xl">
+            Seu próximo lançamento merece uma estrutura{" "}
+            <span className="font-serif-display gradient-text-brand">à altura.</span>
+          </h2>
+        </RevealOnScroll>
+
+        <RevealOnScroll variant="fade-up" delay={200}>
+          <p className="mx-auto mt-7 max-w-xl text-pretty text-base text-dark-foreground/70 md:text-xl">
+            15 minutos no WhatsApp e você sai com um diagnóstico claro do que está travando seu
+            faturamento — independente de fechar comigo ou não.
           </p>
-        </div>
+        </RevealOnScroll>
+
+        <RevealOnScroll variant="zoom" delay={350}>
+          <div className="mt-10 flex flex-col items-center gap-4">
+            <WhatsAppButton size="xl" glow>
+              Quero conversar agora
+            </WhatsAppButton>
+            <p className="text-sm text-dark-muted">
+              Sem compromisso. Se não fizer sentido pro seu momento, eu te falo na hora.
+            </p>
+          </div>
+        </RevealOnScroll>
       </div>
     </section>
   );

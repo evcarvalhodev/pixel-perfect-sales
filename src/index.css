@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif&family=JetBrains+Mono:wght@400;500;600&family=Anton&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design system — Pixel Perfect Sales (HSL tokens, semantic only) */
+
+@layer base {
+  :root {
+    --background: 30 20% 98%;
+    --foreground: 240 30% 8%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 30% 8%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 30% 8%;
+
+    --primary: 240 30% 10%;
+    --primary-foreground: 30 20% 98%;
+
+    --secondary: 240 15% 95%;
+    --secondary-foreground: 240 30% 10%;
+
+    --muted: 240 15% 95%;
+    --muted-foreground: 240 8% 42%;
+
+    --accent: 240 15% 94%;
+    --accent-foreground: 240 30% 10%;
+
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 30 20% 98%;
+
+    --border: 240 12% 90%;
+    --input: 240 12% 90%;
+    --ring: 240 8% 60%;
+
+    --radius: 1rem;
+
+    /* Brand tokens */
+    --whatsapp: 145 60% 45%;
+    --whatsapp-glow: 145 70% 55%;
+    --whatsapp-foreground: 0 0% 100%;
+    --electric: 230 90% 62%;
+    --electric-glow: 220 95% 70%;
+    --gold: 38 92% 55%;
+    --dark: 240 30% 8%;
+    --dark-foreground: 30 15% 96%;
+    --dark-muted: 240 10% 62%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 30% 6%;
+    --foreground: 30 15% 96%;
+    --card: 240 30% 9%;
+    --card-foreground: 30 15% 96%;
+    --popover: 240 30% 9%;
+    --popover-foreground: 30 15% 96%;
+    --primary: 30 15% 96%;
+    --primary-foreground: 240 30% 10%;
+    --secondary: 240 25% 16%;
+    --secondary-foreground: 30 15% 96%;
+    --muted: 240 25% 16%;
+    --muted-foreground: 240 10% 65%;
+    --accent: 240 25% 16%;
+    --accent-foreground: 30 15% 96%;
+    --destructive: 0 60% 40%;
+    --destructive-foreground: 30 15% 96%;
+    --border: 240 25% 16%;
+    --input: 240 25% 16%;
+    --ring: 240 8% 70%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+
+  .font-serif-display {
+    font-family: 'Instrument Serif', 'Times New Roman', serif;
+    font-style: italic;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+  }
+
+  .font-display-tight {
+    font-family: 'Anton', 'Space Grotesk', sans-serif;
+    letter-spacing: -0.04em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-feature-settings: 'ss02', 'cv11';
+  }
+}
+
+@layer utilities {
+  .bg-dark-section {
+    background:
+      radial-gradient(ellipse 80% 60% at 80% 0%, hsl(var(--electric) / 0.18) 0%, transparent 50%),
+      radial-gradient(ellipse 60% 50% at 0% 100%, hsl(var(--whatsapp) / 0.12) 0%, transparent 50%),
+      linear-gradient(180deg, hsl(240 35% 9%) 0%, hsl(240 40% 5%) 100%);
+  }
+
+  .bg-grid-dark {
+    background-image:
+      linear-gradient(hsl(0 0% 100% / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(0 0% 100% / 0.04) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .bg-dots-light {
+    background-image: radial-gradient(hsl(240 10% 70% / 0.35) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-pretty {
+    text-wrap: pretty;
+  }
+
+  .gradient-text-brand {
+    background: linear-gradient(110deg, hsl(var(--electric-glow)) 0%, hsl(var(--whatsapp-glow)) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .shadow-glow-electric {
+    box-shadow: 0 20px 60px -15px hsl(var(--electric) / 0.45);
+  }
+
+  .shadow-glow-whatsapp {
+    box-shadow: 0 20px 60px -15px hsl(var(--whatsapp) / 0.5);
+  }
+
+  .shadow-soft {
+    box-shadow:
+      0 1px 2px hsl(240 30% 8% / 0.04),
+      0 8px 24px -8px hsl(240 30% 8% / 0.08);
+  }
+
+  .shadow-soft-lg {
+    box-shadow:
+      0 2px 4px hsl(240 30% 8% / 0.05),
+      0 20px 50px -12px hsl(240 30% 8% / 0.15);
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-marquee {
+    animation: marquee 28s linear infinite;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .pulse-glow {
+    box-shadow: 0 0 0 0 hsl(var(--whatsapp) / 0.55);
+    animation: pulse-glow 2.4s infinite;
+  }
+
+  @keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 hsl(var(--whatsapp) / 0.5); }
+    70% { box-shadow: 0 0 0 22px hsl(var(--whatsapp) / 0); }
+    100% { box-shadow: 0 0 0 0 hsl(var(--whatsapp) / 0); }
+  }
+
+  .animate-shimmer {
+    background-size: 200% 100%;
+    animation: shimmer 2.6s linear infinite;
+  }
+
+  @keyframes shimmer {
+    from { background-position: 200% 0; }
+    to { background-position: -200% 0; }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Aurora orbs — soft animated mesh background */
+  .aurora-orb {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(110px);
+    opacity: 0.55;
+    will-change: transform;
+  }
+
+  .animate-aurora-1 { animation: aurora-1 18s ease-in-out infinite; }
+  .animate-aurora-2 { animation: aurora-2 22s ease-in-out infinite; }
+  .animate-aurora-3 { animation: aurora-3 26s ease-in-out infinite; }
+
+  @keyframes aurora-1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(60px, -40px) scale(1.15); }
+  }
+  @keyframes aurora-2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-50px, 60px) scale(1.1); }
+  }
+  @keyframes aurora-3 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(40px, 50px) scale(1.2); }
+  }
+
+  /* Conic gradient ring for hero badges */
+  .conic-ring {
+    background: conic-gradient(from 0deg,
+      hsl(var(--electric-glow)) 0%,
+      hsl(var(--whatsapp-glow)) 33%,
+      hsl(var(--gold)) 66%,
+      hsl(var(--electric-glow)) 100%);
+    animation: spin-slow 8s linear infinite;
+  }
+
+  @keyframes spin-slow {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Animated gradient text — futuristic shimmer */
+  .gradient-text-animated {
+    background: linear-gradient(110deg,
+      hsl(var(--electric-glow)) 0%,
+      hsl(var(--whatsapp-glow)) 35%,
+      hsl(var(--gold)) 60%,
+      hsl(var(--electric-glow)) 100%);
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-flow 6s linear infinite;
+  }
+
+  @keyframes gradient-flow {
+    to { background-position: 250% center; }
+  }
+
+  /* Text reveal — letter by letter slide up */
+  .reveal-mask {
+    overflow: hidden;
+    display: inline-block;
+  }
+  .reveal-line {
+    display: inline-block;
+    animation: reveal-up 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes reveal-up {
+    from { transform: translateY(110%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  /* Glassmorphism cards */
+  .glass {
+    background: hsl(0 0% 100% / 0.04);
+    backdrop-filter: blur(16px) saturate(140%);
+    -webkit-backdrop-filter: blur(16px) saturate(140%);
+    border: 1px solid hsl(0 0% 100% / 0.08);
+  }
+
+  /* Shine sweep — for buttons & badges */
+  .shine::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg,
+      transparent 30%,
+      hsl(0 0% 100% / 0.25) 50%,
+      transparent 70%);
+    transform: translateX(-100%);
+    animation: shine-sweep 3.5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes shine-sweep {
+    to { transform: translateX(100%); }
+  }
+
+  /* Ticker scroll for stats / logos */
+  .animate-ticker {
+    animation: ticker 35s linear infinite;
+  }
+  @keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* Subtle scan line over hero */
+  .scan-line::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+      transparent 0%,
+      hsl(var(--electric-glow) / 0.04) 50%,
+      transparent 100%);
+    background-size: 100% 8px;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  /* Animation delays for staggered reveals */
+  .delay-100 { animation-delay: 0.1s; }
+  .delay-200 { animation-delay: 0.2s; }
+  .delay-300 { animation-delay: 0.3s; }
+  .delay-400 { animation-delay: 0.4s; }
+  .delay-500 { animation-delay: 0.5s; }
+  .delay-700 { animation-delay: 0.7s; }
+  .delay-900 { animation-delay: 0.9s; }
+
+  /* Avatar orbital ring — slow rotation */
+  .orbital-ring {
+    background: conic-gradient(from 90deg,
+      transparent 0%,
+      hsl(var(--electric-glow)) 15%,
+      transparent 35%,
+      hsl(var(--whatsapp-glow)) 55%,
+      transparent 75%,
+      hsl(var(--gold)) 90%,
+      transparent 100%);
+    animation: spin-orbit 12s linear infinite;
+  }
+
+  @keyframes spin-orbit {
+    to { transform: rotate(360deg); }
+  }
+
+  /* Floating tag — gentle drift */
+  .float-tag-a { animation: float-tag-a 7s ease-in-out infinite; }
+  .float-tag-b { animation: float-tag-b 9s ease-in-out infinite; }
+
+  @keyframes float-tag-a {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(-8px) translateX(4px); }
+  }
+  @keyframes float-tag-b {
+    0%, 100% { transform: translateY(0) translateX(0); }
+    50% { transform: translateY(6px) translateX(-5px); }
+  }
+
+  /* Marquee — infinite scroll */
+  .marquee-track {
+    animation: marquee-x 30s linear infinite;
+  }
+  @keyframes marquee-x {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* Noise texture for premium grain */
+  .noise-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+  }
+
+  /* Cases carousel — fast infinite scroll */
+  .animate-cases-scroll {
+    animation: cases-scroll 20s linear infinite;
+  }
+  @keyframes cases-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* Hide scrollbar for drag carousel */
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+}
