@@ -76,7 +76,7 @@ export function Hero() {
         </div>
 
         {/* Headline */}
-        <h1 className="mx-auto mt-8 w-full max-w-4xl text-center font-display text-[28px] font-black leading-[1] tracking-[-0.03em] drop-shadow-[0_0_60px_hsl(var(--electric)/0.3)] sm:text-[40px] md:text-[56px] lg:text-[72px]">
+        <h1 className="mx-auto mt-8 w-full max-w-4xl text-center font-display text-[28px] font-black leading-[1.05] tracking-[-0.03em] drop-shadow-[0_0_60px_hsl(var(--electric)/0.3)] sm:text-[36px] md:text-[44px] lg:text-[52px] xl:text-[60px]">
           <span className="block">
             <span className="reveal-mask">
               <span className="reveal-line">Sua empresa merece uma</span>
