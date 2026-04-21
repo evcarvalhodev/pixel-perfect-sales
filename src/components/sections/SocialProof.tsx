@@ -168,6 +168,10 @@ export function SocialProof() {
               Veja os depoimentos em{" "}
               <span className="gradient-text-animated">vídeo</span>
             </h3>
+            <p className="mt-2 text-center text-sm text-dark-muted">
+              Trabalhos realizados em nome da nossa empresa{" "}
+              <span className="font-semibold text-whatsapp-glow">GoUp Creation</span>
+            </p>
 
             <div className="mt-8 grid gap-6 md:grid-cols-[1fr_280px]">
               <div className="relative overflow-hidden rounded-2xl border border-white/[0.06] bg-black/40">

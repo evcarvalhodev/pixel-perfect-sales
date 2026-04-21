@@ -126,7 +126,7 @@ export function Hero() {
 
         {/* Stats strip */}
         <div className="animate-fade-up delay-900 mt-14 grid w-full grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] backdrop-blur-xl md:mt-20 md:grid-cols-4 md:rounded-[28px]">
-          <Stat value="R$ 2M+" label="gerenciados em ads" />
+          <Stat value="R$ 100Mil+" label="gerenciados em ads" />
           <Stat value="40+" label="páginas no ar" />
           <Stat value="7 dias" label="do briefing ao live" />
           <Stat value="3.4x" label="ROAS médio" />

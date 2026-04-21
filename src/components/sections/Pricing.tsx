@@ -44,11 +44,11 @@ export function Pricing() {
 
           <div className="mx-auto mt-6 inline-flex flex-col items-center gap-2">
             <span className="text-dark-muted line-through font-serif-display text-2xl md:text-3xl">
-              R$ 3.500
+              R$ 4.000
             </span>
             <div className="relative">
               <span className="gradient-text-animated text-5xl font-bold font-display tracking-tight md:text-7xl lg:text-8xl">
-                R$ 1.997
+                R$ 2.500
               </span>
               <div className="absolute -inset-4 -z-10 rounded-3xl bg-electric/[0.06] blur-2xl" />
             </div>

@@ -32,7 +32,7 @@ const cases: Case[] = [
   {
     tag: "Perpétuo",
     tagColor: "bg-whatsapp/20 text-whatsapp ring-1 ring-whatsapp/30",
-    niche: "Curso online de inglês",
+    niche: "Academia Energym",
     roas: "3.6x",
     cpl: "R$ 4,90",
     conversion: "2.8%",
@@ -56,7 +56,7 @@ const cases: Case[] = [
   {
     tag: "E-commerce",
     tagColor: "bg-electric/20 text-electric ring-1 ring-electric/30",
-    niche: "Loja de suplementos",
+    niche: "DJ para festas",
     roas: "3.9x",
     cpl: "R$ 3,80",
     conversion: "3.5%",
