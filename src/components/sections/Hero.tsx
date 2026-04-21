@@ -139,7 +139,7 @@ export function Hero() {
 function Stat({ value, label }: { value: string; label: string }) {
   return (
     <div className="group relative bg-dark/60 px-4 py-5 text-center transition-colors duration-500 hover:bg-dark/40 md:px-6 md:py-7 md:text-left">
-      <div className="font-display text-xl font-bold tracking-tight md:text-3xl">
+      <div className="font-display text-lg font-bold tracking-tight whitespace-nowrap md:text-2xl">
         <span className="gradient-text-animated">{value}</span>
       </div>
       <div className="mt-1 font-mono text-[9px] uppercase tracking-[0.18em] text-dark-muted md:text-[11px]">
