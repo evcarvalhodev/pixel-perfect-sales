@@ -21,8 +21,8 @@ const faqs = [
     a: "Depende do diagnóstico. Às vezes ajustar copy e CTAs já resolve; outras vezes a estrutura inteira está sabotando a conversão. No primeiro papo eu te falo o que faz mais sentido — sem empurrar refação quando não precisa.",
   },
   {
-    q: "O investimento em ads já está incluso nos R$ 1.997?",
-    a: "Não. Os R$ 1.997 cobrem a construção da página + setup e gestão inicial das campanhas (7 dias). O investimento em anúncios é separado e fica direto no seu cartão Meta. Recomendo começar com R$ 50-80 por dia.",
+    q: "O investimento em ads já está incluso nos R$ 2.500?",
+    a: "Não. Os R$ 2.500 cobrem a construção da página + setup e gestão inicial das campanhas (7 dias). O investimento em anúncios é separado e fica direto no seu cartão Meta. Recomendo começar com R$ 50-80 por dia.",
   },
   {
     q: "E se eu não gostar do resultado em 7 dias?",
