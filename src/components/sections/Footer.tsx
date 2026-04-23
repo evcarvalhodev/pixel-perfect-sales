@@ -19,7 +19,7 @@ const navLinks = [
 
 const services = [
   "Landing pages que convertem",
-  "Tráfego pago Meta + Google",
+  "Tráfego pago Meta Ads",
   "Pixel + tracking server-side",
   "Otimização contínua de CPA",
 ];
